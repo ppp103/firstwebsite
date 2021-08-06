@@ -1,0 +1,450 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+}
+
+.header{
+    display:flex;
+    background-color: black;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1;
+}
+
+a{
+    text-transform:uppercase;
+}
+
+.list{
+    display:flex;
+}
+
+.list li{
+    list-style: none;
+}
+
+.list li a{
+    text-decoration: none;
+    color:#fff;
+    display:inline-block;
+    padding: 15px 20px;
+    transition:0.4s;
+}
+
+.list li a:hover{
+    background-color: lightgray;
+    color:black;
+}
+
+.ti-angle-down{
+    font-size:10px;
+    margin-left:2px;
+    margin-top:2px;
+}
+
+.sub-bar{
+    position:absolute;
+    display: none;
+    border: 0.2px solid black;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+}
+
+.sub-bar li{
+    background-color: white;
+}
+
+.list li:hover .sub-bar{
+    display:block;
+}
+
+.sub-bar li a{
+    color:black;
+    width:100%; /* để màu full thanh extras do block kế thừa chiều ngang của thẻ chứa nó nên nó sẽ wrap xung quanh
+                    c2:display:block;
+                */
+}
+
+.ti-search{
+    color:#fff;
+    float: right;
+    padding:16.5px 20px;
+    margin:0;
+    transition:0.4s;
+}
+
+.ti-search:hover{
+    background-color: orange;
+}
+
+.slide{
+    position:relative;
+}
+
+.slide img{
+    width:100%;
+    height:auto;
+    margin-top:46px;
+    z-index:-1; /*để ảnh k lấp mất thanh header nên z-index: -1 và header z-index:1 */
+}
+
+
+ .cmt{
+    position:absolute;
+    left:0;
+    bottom:46px;
+    color:#fff;
+    width:100%;
+    text-align:center;
+}
+/* absolute chuyển trục tọa độ lên thẻ có relative gần nhất.
+Ở đây thẻ cha gần nhất là slide nên slide có position relative chứ không dùng position lên thẻ img */
+
+.cmt .LA{
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+
+
+/* content */
+.content{
+    width:90%;
+    margin:auto;
+    padding-top:64px;
+    padding-bottom:64px;
+}
+
+.container{
+    width:80%;
+    height:auto;
+    margin:auto;
+    margin-bottom:0;
+}
+
+.container .part1{
+    text-align:center;
+}
+
+.part1 .p1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:100;
+    font-size:30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 10px 0 10px 0;
+}
+
+.part1 .p2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style:italic;
+    font-size:15px;
+    opacity: 0.6;
+    margin: 15px 0 15px 0;
+}
+
+.part2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:15px;
+    line-height: 1.5;
+    width:768px;
+    margin:auto;
+}
+
+.images{
+    width:768px;
+    display:flex; 
+    justify-content: space-evenly;
+    margin:20px;
+    padding-bottom:30px;
+    box-sizing: border-box;
+}
+
+.images:hover{
+    opacity: 0.6;
+}
+
+.images .image-1 p{
+    text-align: center;
+    padding:10px;
+}
+
+.images .image-1 img{
+    border-radius: 4px;
+}
+ /* Tour */
+.tour{
+    background-color: #000;
+}
+
+.container{
+    width:800px;
+    height:auto;
+    padding:64px 16px;
+    margin:auto;
+}
+
+.tour-head{
+    text-align:center;
+    color:white;
+}
+
+.p1{
+    font-size:30px;
+    margin: 10px 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p2{
+    font-style: italic;
+    opacity:0.6;
+    font-size:15px;
+    font-family: "Lato", sans-serif;
+    margin:15px 0 30px 0;
+}
+
+.tickets{
+    background-color: #fff;
+    list-style: none;
+    font-size:15px;
+    font-family: "Lato", sans-serif;
+}
+
+.tickets li{
+    border-bottom:1px solid #bdb6b6;
+    padding:8px 16px;
+}
+
+.month{
+    opacity:0.6;
+}
+
+.sold{
+    color:#fff;
+    background-color:  #f44336;
+    padding: 2px 8px;
+    margin-left:16px;
+}
+
+.number{
+    padding: 1px 5px;
+    background-color: #000;
+    border-radius: 50%;
+    color:#fff;
+    float:right;
+    margin-left:16px;
+}
+
+.images-container{
+    display:flex;
+    margin: 32px -8px 0 -8px; /* dùng padding và margin âm */
+}
+
+.images-container .img-2{
+    padding:8px;
+}
+
+.images-container .img-2 img{
+    width:100%;
+    display:block;
+}
+
+.image-effect:hover{
+    opacity:0.6;
+}
+
+.infor{
+    background-color: #fff;
+    padding:15px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+}
+
+/* cách 2: dùng flex box
+
+.images-container{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.images-container .img-2{
+    flex-basis: 32%;    <cái cột chứa ảnh và cmt>
+}
+
+.images-container .img-2 img{
+    width:100%;  <để ảnh fit vs contain>
+    display:block; <làm mất chỗ trống giữa img và ảnh>
+}
+
+.infor{
+    background-color: #fff;
+}
+ */
+
+.infor p{
+    padding:5px;
+    margin-bottom: 5px;
+}
+
+.head1{
+    font-weight:bold;
+}
+
+.head2{
+    color: #bdb6b6;
+}
+
+
+.button2{
+    padding:8px 16px;
+    margin: 5px 0;
+    display:inline-block;
+    color:#fff;
+    background-color: #000;
+    transition: 0.3s;
+    cursor:pointer;
+    text-transform: initial;
+}
+
+.button2:hover{
+    background-color: #bdb6b6;
+    color:#000;
+}
+
+ /* tour ends */
+
+ /* contact starts */
+#contact{
+    width:100%;
+    height:400px;
+    margin-top: 50px;
+}
+
+#contact .contact-container{
+    width: 800px;
+    height:auto;
+    margin:auto;
+}
+
+.contact-container .container-head{
+    text-align: center;
+}
+
+.contact-container .information{
+    display:flex;
+}
+
+.information .infor{
+    flex:1;
+    font-size:18px;
+}
+
+.information .take-infor{
+    flex:1;
+}
+
+.take-infor .row1{
+    display:flex;
+    justify-content: space-between;
+}
+
+.row1 .name{
+    flex:1;
+}
+
+.row1 .email{
+    flex:1;
+}
+
+.form-control{
+    padding:5px;
+    font-size:15px;
+}
+
+.form-control2{
+    width:100%;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.form-control ,
+.form-control2{
+    border:1px solid #ccc;
+}
+
+.take-infor .row2{
+    margin-top: 8px;
+}
+
+.take-infor a{
+    float:right;
+    margin-top: 10px;
+}
+
+
+ /* contact ends */
+
+
+ /*footer */
+ .map img{
+    width:100%;
+    height:auto;
+}
+
+.footer{
+    opacity: 0.6;
+}
+
+.icons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.icons i{
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+.footer p{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+.icons i:hover{
+    color:rgb(153, 145, 145);
+}
+
+
+
+
+
+
+
+
+
+
+
+ /*end*/
+
+
+
+
+
+
+
+
+
+
+
